@@ -18,11 +18,11 @@ header {
 nav {
     display: flex;
     justify-content: flex-end;
-    background-color: orange;
+    background-color: #3dc43d;
     gap: 20px;
     padding: 0 20px;
     height: 100%;
-    align-items: center;
+
 
 }
 
@@ -38,7 +38,7 @@ section {
     margin: 20px;
     padding: 20px;
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
 }
 footer {
     text-align: left;
@@ -47,9 +47,10 @@ footer {
     color: white;
 }
 h3 {
+    color: #3dc43d;
     text-align: center;
 }
-contact {
+.contact {
     text-align: center;
 }
 .text-box {
@@ -60,16 +61,11 @@ contact {
 .img-box {
     text-align: center;
     justify-content: center;
-
-
 }
 
 li {
     display: inline-block;
 }
-
-
-
 p {
     text-align: center;
 }
@@ -77,11 +73,10 @@ img {
     border-radius: 8px;
 }
 h2 {
-    color: orange;
+    color: #3dc43d;
     padding: 10px;
     border-radius: 8px;
     background-color: black;
-    margin: 50px;
     width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -93,7 +88,6 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
 
 }
 .search-box input[type="text"] {
@@ -107,8 +101,7 @@ h2 {
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
-    background-color: orange;
+    background-color: #3dc43d;
     color: black;
     cursor: pointer;
-
-}   
+}

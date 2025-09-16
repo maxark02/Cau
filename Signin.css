@@ -12,8 +12,8 @@ h1 {
     font-size: 28px;
     text-align: center;
     padding: 10px 0;
-    color: white;
-    background-color: orange;
+    color: black;
+    background-color: #3dc43d;
     border-radius: 8px;
     width: 350px;
     margin-left: auto;
@@ -34,8 +34,8 @@ body {
 }
 .Signin-box {
     text-align: center;
-    color: white;
-    background-color: orange;
+    color: black;
+    background-color: #3dc43d;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.2);
@@ -45,7 +45,7 @@ body {
 nav {
     display: flex;
     justify-content: flex-end;
-    background-color: orange;
+    background-color: #3dc43d;
     gap: 20px;
     padding: 0 20px;
     height: 100%;
@@ -58,5 +58,5 @@ nav a {
     display: inline-block;
 }
 label {
-    color:white
+    color: black;
 }

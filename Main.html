@@ -38,23 +38,26 @@
     </div>
 </section>
 
-<div class="img-box2">
-    <h2>Popular</h2>
-    <ul>
-        {% for video in videos %}
-        <li>
-            <a href="">
-                <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
-                <div class="text-box">
-                    <p>{{ video.title }}</p>
-                </div>
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+<section>
+    <div class="header-box">
+        <div class="img-box">
+            <h2>Popular</h2>
+            <ul>
+                {% for video in videos %}
+                <li>
+                    <a href="">
+                        <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
+                        <div class="text-box">
+                            <p>{{ video.title }}</p>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
 
-    </ul>
 
     <footer>
         <h3>Contact us</h3>
