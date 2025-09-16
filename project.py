@@ -17,14 +17,13 @@ def get_db_connection():
 @app.route('/')
 def home():
     videos = [
-            {"title": "1st video", "thumbnail": "https://img.youtube.com/vi/zFj1nMFmxCo/hqdefault.jpg"},
-            {"title": "2nd video", "thumbnail": "https://img.youtube.com/vi/xGy_IiNLATc/hqdefault.jpg"},
-            {"title": "3rd video", "thumbnail": "https://img.youtube.com/vi/0kGwq2AaMNo/hqdefault.jpg"},
-            {"title": "4rd video", "thumbnail": "https://img.youtube.com/vi/0kGwq2AaMNo/hqdefault.jpg"}
+            {"title": "maximka", "thumbnail": "https://img.youtube.com/vi/zFj1nMFmxCo/hqdefault.jpg"},
+            {"title": "stas9n", "thumbnail": "https://novate.ru/files/u34476/little-known-04.jpg"},
+            {"title": "alexey", "thumbnail": "https://masterpiecer-images.s3.yandex.net/04a1f5cab05311eeaf3456e543f8144e:upscaled"}
             ]
     return render_template("main.html",videos=videos)
 
-@app.route('/registration', methods=['GET', 'POST'])
+@app.route('/Registration', methods=['GET', 'POST'])
 def registration():
     if request.method == 'POST':
         username = request.form['username']
@@ -41,10 +40,10 @@ def registration():
 
         return redirect(url_for('login'))
 
-    return render_template("registration.html")
+    return render_template("Registration.html")
 
 
-@app.route('/signin', methods=['GET', 'POST'])
+@app.route('/Signin', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form['username']
@@ -66,7 +65,7 @@ def login():
         else:
             return "Неверный логин или пароль"
 
-    return render_template("signin.html")
+    return render_template("Signin.html")
 
 
 @app.route('/logout')
