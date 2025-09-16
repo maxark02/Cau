@@ -38,7 +38,7 @@
     </div>
 </section>
 
-<div class="img-box">
+<div class="img-box2">
     <h2>Popular</h2>
     <ul>
         {% for video in videos %}
@@ -54,18 +54,6 @@
     </ul>
 </div>
 
-<div class="img-box">
-    <ul>
-        {% for video in videos %}
-        <li>
-            <a href="">
-                <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
-                <div class="text-box">
-                    <p>{{ video.title }}</p>
-                </div>
-            </a>
-        </li>
-        {% endfor %}
     </ul>
 
     <footer>
