@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Главная</title>
-    <link rel="stylesheet" href="../static/registered.css">
+    <link rel="stylesheet" href="../static/css/registered.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/registered.css') }}">
 </head>
@@ -14,8 +14,8 @@
             <input type="text" placeholder="Search...">
             <button type="submit">Search</button>
 
-            <a href="../static/main.css">Log out</a>
-            <a href="../static/profile.css">Profile</a>
+            <a href="main">Log out</a>
+            <a href="profile">Profile</a>
         </div>
     </nav>
 </header>
@@ -25,32 +25,16 @@
         <div class = "img-box">
             <h2>Recomended</h2>
             <ul>
+                {% for video in videos %}
                 <li>
-                    <img src = "video.jpg" alt="Video Icon" width="380" height="250">
-                    <div class = "text-box">
-
-                        <p> Title of the video </p>
-                    </div>
+                    <a href="">
+                        <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
+                        <div class="text-box">
+                            <p>{{ video.title }}</p>
+                        </div>
+                    </a>
                 </li>
-                <li>
-                    <img src = "video.jpg" alt="Video Icon" width="380" height="250">
-      2              <div class = "text-box">
-
-                        <p> Title of the video </p>
-                </div>
-                </li>
-                <li>
-                    <img src = "video.jpg" alt="Video Icon" width="380" height="250">
-                    <div class = "text-box">
-
-                        <p> Title of the video </p>
-                    </div>
-
-                </li>
-                <li>
-
-                </li>
-
+                {% endfor %}
             </ul>
         </div>
     </div>
@@ -58,65 +42,20 @@
 <div class = "img-box">
     <h2>Popular</h2>
     <ul>
+        {% for video in videos %}
         <li>
-            <img src = "video.jpg" alt="Video Icon" width="380" height="250">
-            <div class = "text-box">
-
-                <p> Title of the video </p>
-            </div>
-
+            <a href="">
+                <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
+                <div class="text-box">
+                    <p>{{ video.title }}</p>
+                </div>
+            </a>
         </li>
-        <li>
-            <img src = "video.jpg" alt="Video Icon" width="380" height="250">
-            <div class = "text-box">
-
-                <p> Title of the video </p>
-            </div>
-        </li>
-        <li>
-            <img src = "video.jpg" alt="Video Icon" width="380" height="250">
-            <div class = "text-box">
-
-                <p> Title of the video </p>
-            </div>
-
-        </li>
-
-
+        {% endfor %}
     </ul>
 </div>
 </div>
 
-
-<div class = "img-box">
-
-    <ul>
-        <li>
-            <img src = "video.jpg" alt="Video Icon" width="380" height="250">
-            <div class = "text-box">
-
-                <p> Title of the video </p>
-            </div>
-
-        </li>
-        <li>
-            <img src = "video.jpg" alt="Video Icon" width="380" height="250">
-            <div class = "text-box">
-
-                <p> Title of the video </p>
-            </div>
-        </li>
-        <li>
-            <img src = "video.jpg" alt="Video Icon" width="380" height="250">
-            <div class = "text-box">
-
-                <p> Title of the video </p>
-
-            </div>
-        </li>
-
-
-    </ul>
 
 
 
@@ -132,6 +71,7 @@
 
         <p>&copy; 2025 Video Hosting. All rights reserved.</p>
     </footer>
+</div>
+</body>
 
-    </body>
 </html>
