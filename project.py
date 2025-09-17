@@ -66,7 +66,7 @@ def signin():
         if user:
             session['user_id'] = user['id']
             session['username'] = user['username']
-            return redirect(url_for('profile'))
+            return redirect(url_for('registered'))
         else:
             return "Неверный логин или пароль"
 
