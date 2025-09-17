@@ -12,8 +12,8 @@
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button type="submit">Search</button>
-            <a href="../RegistrationPage/Registration.html">Registration</a>
-            <a href="../SigninPage/Signin.html">SignIn</a>
+	    <a href="{{ url_for('registration') }}">Registration</a>
+	    <a href="{{ url_for('signin') }}">SignIn</a>
         </div>
     </nav>
 </header>
@@ -21,7 +21,7 @@
 <section>
     <div class="header-box">
         <div class="img-box">
-            <h2>Recomended</h2>
+            <h2>Recommended</h2>
             <ul>
                 {% for video in videos %}
                 <li>
