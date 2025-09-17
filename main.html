@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CAU Tube</title>
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+            <a href="registered.html">Registration</a>
+            <a href="signin.html">SignIn</a>
+        </div>
+    </nav>
+</header>
+
+<section>
+    <div class="header-box">
+        <div class="img-box">
+            <h2>Recomended</h2>
+            <ul>
+                {% for video in videos %}
+                <li>
+                    <a href="">
+                        <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
+                        <div class="text-box">
+                            <p>{{ video.title }}</p>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="header-box">
+        <div class="img-box">
+            <h2>Popular</h2>
+            <ul>
+                {% for video in videos %}
+                <li>
+                    <a href="">
+                        <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
+                        <div class="text-box">
+                            <p>{{ video.title }}</p>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <footer>
+        <h3>Contact us</h3>
+        <p>
+            <a href="mailto:example@mail.com">Email</a>
+        </p>
+        <p>
+            <a href="https://t.me/MrXlebka">Telegram</a>
+            <a href="https://github.com/maxark02">GitHub</a>
+        </p>
+        <p>&copy; 2025 Video Hosting. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>
