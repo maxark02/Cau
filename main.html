@@ -2,8 +2,6 @@
 <html>
 <head>
     <title>CAU Tube</title>
-    <link rel="stylesheet" href="../static/main.css">
-    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
@@ -12,8 +10,8 @@
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button type="submit">Search</button>
-            <a href="registered.html">Registration</a>
-            <a href="signin.html">SignIn</a>
+            <a href="registration">Registration</a>
+            <a href="signin">SignIn</a>
         </div>
     </nav>
 </header>
@@ -21,7 +19,7 @@
 <section>
     <div class="header-box">
         <div class="img-box">
-            <h2>Recomended</h2>
+            <h2>Recommended</h2>
             <ul>
                 {% for video in videos %}
                 <li>
