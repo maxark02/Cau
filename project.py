@@ -13,12 +13,15 @@ def get_db_connection():
 @app.route('/')
 @app.route('/main')
 def home():
-    videos = [
+    popular_videos = [
             {"title": "maximka", "thumbnail": "https://img.youtube.com/vi/zFj1nMFmxCo/hqdefault.jpg"},
             {"title": "stas9n", "thumbnail": "https://novate.ru/files/u34476/little-known-04.jpg"},
             {"title": "alexey", "thumbnail": "https://masterpiecer-images.s3.yandex.net/04a1f5cab05311eeaf3456e543f8144e:upscaled"}
             ]
-    return render_template("main.html",videos=videos)
+    recommended_videos = [
+            {"title": "legenda", "thumbnail": "https://img.youtube.com/vi/lOKASgtr6kU/hqdefault.jpg"}
+            ]
+    return render_template("main.html",popular_videos=popular_videos,recommended_videos=recommended_videos)
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
@@ -42,11 +45,13 @@ def registration():
 
 @app.route('/registered')
 def registered():
-    videos = [
-            {"title": "manuk", "thumbnail": "https:/img.youtube.com/vi/fS93AsZeSy0/hqdefault.jpg"},
-            {"title": "manuk", "thumbnail": "https:/img.youtube.com/vi/fS93AsZeSy0/hqdefault.jpg"}
+    recommended_videos = [
+            {"title": "manuk", "thumbnail": "https://sportishka.com/uploads/posts/2022-11/1667452782_22-sportishka-com-p-koreitsi-kachki-oboi-22.jpg"},
             ]
-    return render_template("registered.html",videos=videos)
+    popular_videos = [
+            {"title": "azul", "thumbnail": "https://famoushustle.com/cdn/shop/products/FamousHustle.com8ujrm1w17gbColor.png?v=1648955518"}
+            ]
+    return render_template("registered.html",recommended_videos=recommended_videos,popular_videos=popular_videos)
 
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():

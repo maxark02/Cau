@@ -23,14 +23,12 @@
         <div class="img-box">
             <h2>Recommended</h2>
             <ul>
-                {% for video in videos %}
+                {% for video in recommended_videos %}
                 <li>
-                    <a href=" {{ video.url }} ">
-                        <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
-                        <div class="text-box">
-                            <p>{{ video.title }}</p>
-                        </div>
-                    </a>
+                    <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
+                    <div class="text-box">
+                        <p>{{ video.title }}</p>
+                    </div>
                 </li>
                 {% endfor %}
             </ul>
@@ -43,21 +41,18 @@
         <div class="img-box">
             <h2>Popular</h2>
             <ul>
-                {% for video in videos %}
+                {% for video in popular_videos %}
                 <li>
-                    <a href=" {{video.url}} ">
-                        <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
-                        <div class="text-box">
-                            <p>{{ video.title }}</p>
-                        </div>
-                    </a>
+                    <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
+                    <div class="text-box">
+                        <p>{{ video.title }}</p>
+                    </div>
                 </li>
                 {% endfor %}
             </ul>
         </div>
     </div>
 </section>
-
 
     <footer>
         <h3>Contact us</h3>
@@ -70,6 +65,5 @@
         </p>
         <p>&copy; 2025 Video Hosting. All rights reserved.</p>
     </footer>
-</div>
 </body>
 </html>

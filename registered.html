@@ -8,12 +8,10 @@
 </head>
 <body>
 <header>
-
     <nav>
-        <div class = "search-box">
+        <div class="search-box">
             <input type="text" placeholder="Search...">
             <button type="submit">Search</button>
-
             <a href="main">Log out</a>
             <a href="profile">Profile</a>
         </div>
@@ -21,57 +19,63 @@
 </header>
 
 <section>
-    <div id ="recommended" class = "header-box">
-        <div class = "img-box">
-            <h2>Recomended</h2>
+    <div id="recommended" class="header-box">
+        <div class="img-box">
+            <h2>Recommended</h2>
             <ul>
-                {% for video in videos %}
+                {% for video in recommended_videos %}
                 <li>
+                    {% if video.url %}
                     <a href="{{ video.url }}">
+                    {% endif %}
                         <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
                         <div class="text-box">
                             <p>{{ video.title }}</p>
                         </div>
+                    {% if video.url %}
                     </a>
+                    {% endif %}
                 </li>
                 {% endfor %}
             </ul>
         </div>
     </div>
 </section>
-<div id = "popular" class = "img-box">
-    <h2>Popular</h2>
-    <ul>
-        {% for video in videos %}
-        <li>
-            <a href="{{video.url}}">
-                <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
-                <div class="text-box">
-                    <p>{{ video.title }}</p>
-                </div>
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-</div>
 
+<section>
+    <div id="popular" class="header-box">
+        <div class="img-box">
+            <h2>Popular</h2>
+            <ul>
+                {% for video in popular_videos %}
+                <li>
+                    {% if video.url %}
+                    <a href="{{ video.url }}">
+                    {% endif %}
+                        <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
+                        <div class="text-box">
+                            <p>{{ video.title }}</p>
+                        </div>
+                    {% if video.url %}
+                    </a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
 
-
-
-    <footer>
-        <h3>Contact us</h3>
-        <p>
-            <a href = "mailto:example@mail.com">Email</a>
-        </p>
-        <p>
-            <a href = "https://t.me/MrXlebka">Telegram</a>
-            <a href = "https://github.com/maxark02">GitHub</a>
-        </p>
-
-        <p>&copy; 2025 Video Hosting. All rights reserved.</p>
-    </footer>
-</div>
+<footer>
+    <h3>Contact us</h3>
+    <p>
+        <a href="mailto:example@mail.com">Email</a>
+    </p>
+    <p>
+        <a href="https://t.me/MrXlebka">Telegram</a>
+        <a href="https://github.com/maxark02">GitHub</a>
+    </p>
+    <p>&copy; 2025 Video Hosting. All rights reserved.</p>
+</footer>
 </body>
-
 </html>
