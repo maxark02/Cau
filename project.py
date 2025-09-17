@@ -42,7 +42,11 @@ def registration():
 
 @app.route('/registered')
 def registered():
-    return render_template("registered.html")
+    videos = [
+            {"title": "manuk", "thumbnail": "https:/img.youtube.com/vi/fS93AsZeSy0/hqdefault.jpg"},
+            {"title": "manuk", "thumbnail": "https:/img.youtube.com/vi/fS93AsZeSy0/hqdefault.jpg"}
+            ]
+    return render_template("registered.html",videos=videos)
 
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
