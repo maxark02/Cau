@@ -5,16 +5,13 @@ from flask import Flask, render_template, request, redirect, url_for, session
 app = Flask(__name__)
 app.secret_key = "your_secret_key_here"
 
-YOUTUBE_API_KEY = ""  # вставь сюда свой API-ключ от YouTube
-
-
 def get_db_connection():
     conn = sqlite3.connect('site.db')
     conn.row_factory = sqlite3.Row
     return conn
 
-
 @app.route('/')
+@app.route('/main')
 def home():
     videos = [
             {"title": "maximka", "thumbnail": "https://img.youtube.com/vi/zFj1nMFmxCo/hqdefault.jpg"},
@@ -23,28 +20,32 @@ def home():
             ]
     return render_template("main.html",videos=videos)
 
-@app.route('/Registration', methods=['GET', 'POST'])
+@app.route('/registration', methods=['GET', 'POST'])
 def registration():
     if request.method == 'POST':
         username = request.form['username']
+        email = request.form['email']
         password = request.form['password']
 
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute(
-            "INSERT INTO users (username, password) VALUES (?, ?)",
-            (username, password)
+            "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
+            (username, email, password)
         )
         conn.commit()
         conn.close()
 
-        return redirect(url_for('login'))
+        return redirect(url_for('registered'))
 
-    return render_template("Registration.html")
+    return render_template("registration.html")
 
+@app.route('/registered')
+def registered():
+    return render_template("registered.html")
 
-@app.route('/Signin', methods=['GET', 'POST'])
-def login():
+@app.route('/signin', methods=['GET', 'POST'])
+def signin():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -65,7 +66,7 @@ def login():
         else:
             return "Неверный логин или пароль"
 
-    return render_template("Signin.html")
+    return render_template("signin.html")
 
 
 @app.route('/logout')
@@ -77,14 +78,14 @@ def logout():
 @app.route('/profile')
 def profile():
     if 'user_id' not in session:
-        return redirect(url_for('login'))
+        return redirect(url_for('signin'))
     return render_template("profile.html", username=session['username'])
 
 
 @app.route('/search')
 def search():
     if 'user_id' not in session:
-        return redirect(url_for('login'))
+        return redirect(url_for('signin'))
 
     query = request.args.get('query')
     if not query:
@@ -122,7 +123,7 @@ def search():
 @app.route('/playlists')
 def playlists():
     if 'user_id' not in session:
-        return redirect(url_for('login'))
+        return redirect(url_for('signisigninn'))
 
     user_id = session['user_id']
     conn = get_db_connection()
@@ -136,4 +137,4 @@ def playlists():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=8000)
