@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>CAU Tube</title>
+    <link rel="stylesheet" href="../static/css/registered.css">
+    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
@@ -17,13 +19,13 @@
 </header>
 
 <section>
-    <div class="header-box">
+    <div id="recommended" class="header-box">
         <div class="img-box">
             <h2>Recommended</h2>
             <ul>
                 {% for video in videos %}
                 <li>
-                    <a href="">
+                    <a href=" {{ video.url }} ">
                         <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
                         <div class="text-box">
                             <p>{{ video.title }}</p>
@@ -37,13 +39,13 @@
 </section>
 
 <section>
-    <div class="header-box">
+    <div id ="popular" class="header-box">
         <div class="img-box">
             <h2>Popular</h2>
             <ul>
                 {% for video in videos %}
                 <li>
-                    <a href="">
+                    <a href=" {{video.url}} ">
                         <img src="{{ video.thumbnail }}" alt="Video" width="380" height="250">
                         <div class="text-box">
                             <p>{{ video.title }}</p>
