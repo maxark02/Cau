@@ -14,9 +14,9 @@ def get_db_connection():
 @app.route('/main')
 def home():
     popular_videos = [
-            {"title": "maximka", "thumbnail": "https://img.youtube.com/vi/zFj1nMFmxCo/hqdefault.jpg"},
-            {"title": "stas9n", "thumbnail": "https://novate.ru/files/u34476/little-known-04.jpg"},
-            {"title": "alexey", "thumbnail": "https://masterpiecer-images.s3.yandex.net/04a1f5cab05311eeaf3456e543f8144e:upscaled"}
+            {"title": "maximka", "thumbnail": "../static/images/maximlisa.png"},
+            {"title": "stas9n", "thumbnail": "../static/images/stas9n.png"},
+            {"title": "alexey", "thumbnail": "../static/images/alewaeblan.png"}
             ]
     recommended_videos = [
             {"title": "legenda", "thumbnail": "https://img.youtube.com/vi/lOKASgtr6kU/hqdefault.jpg"}
