@@ -46,7 +46,8 @@ def registration():
 @app.route('/registered')
 def registered():
     recommended_videos = [
-            {"title": "manuk", "thumbnail": "https://sportishka.com/uploads/posts/2022-11/1667452782_22-sportishka-com-p-koreitsi-kachki-oboi-22.jpg"},
+            {"title": "manuk", "thumbnail": "../static/images/manuk.png"},
+            {"title": "erik", "thumbnail": "../static/images/erik.png"}
             ]
     popular_videos = [
             {"title": "azul", "thumbnail": "https://famoushustle.com/cdn/shop/products/FamousHustle.com8ujrm1w17gbColor.png?v=1648955518"}
